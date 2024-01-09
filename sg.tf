@@ -6,7 +6,7 @@ resource "aws_security_group" "allows_redis" {
     vpc_id                  = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description             = "DocDB from Private Network"
+    description             = "Redis from Private Network"
     from_port               = var.REDIS_PORT
     to_port                 = var.REDIS_PORT
     protocol                = "tcp"
