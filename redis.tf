@@ -5,7 +5,7 @@ resource "aws_elasticache_cluster" "redis" {
   node_type            = "cache.t3.micro"
   num_cache_nodes      = 1
   parameter_group_name = aws_elasticache_parameter_group.default.name
-  engine_version       = "6.2"
+  engine_version       = "6.x"
   port                 = 6379
   subnet_group_name    = aws_elasticache_subnet_group.redis.name
 }
@@ -13,7 +13,7 @@ resource "aws_elasticache_cluster" "redis" {
 # Parameter Group
 resource "aws_elasticache_parameter_group" "default" {
   name   = "cache-params"
-  family = "redis6.2"
+  family = "redis6.x"
 }
 
 # Creates Subnet Group
